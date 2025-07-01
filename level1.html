@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programmer List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: #ff073a;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 20px;
+    }
+    .glitch-text {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 900;
+      color: #ff073a;
+      text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 40px #ff073a;
+      animation: glitch-flicker 1.5s infinite alternate;
+    }
+    .programmer-box {
+      min-width: 220px;
+      border: 2px solid #ff073a;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .programmer-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+    }
+    p {
+      margin: 6px 0;
+    }
+    a {
+      color: #ff073a;
+      text-decoration: none;
+    }
+    .ghost-frame {
+      width: 180px;
+      height: 200px;
+      border: 2px solid #ff073a;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    .photo {
+      width: 130px;
+      height: 160px;
+      object-fit: cover;
+    }
+  .body {
+  background-color: #000;
+  color: #f54;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  border: 5px solid #f54;
+}
+
+.container-frame {
+  border: 1px solid #f54;
+  padding: 8px;
+  margin: 10px;
+}
+    .hack-button {
+      background-color: black;
+      color: #ff073a;
+      border: 1px solid #ff073a;
+      padding: 8px 12px;
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+    .hack-button:hover {
+      background-color: #ff073a;
+      color: black;
+    }
+    hr {
+      border: 3px solid #ff073a;
+      margin-bottom: 20px;
+    }
+    .log-header {
+      color: #ff073a;
+      font-size: 20px;
+      border-bottom: 2px solid #ff073a;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .log-box {
+      border: 2px solid #ff073a;
+      padding: 15px;
+      background-color: #0a0a0a;
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #ff073a;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .log-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      color: #ff073a;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      z-index: 999;
+    }
+    .log-content {
+      background: #111;
+      padding: 15px;
+      border: 1px solid #ff073a;
+      max-width: 600px;
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    .close-btn {
+      background: #111;
+      color: #f00;
+      border: 1px solid #f00;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .screen-border {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid #ff003c;
+  border-radius: 10px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 999;
+  box-shadow: 0 0 10px #ff003c, inset 0 0 10px #ff003c;
+}
+    .spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  animation: spinner-plncf9 4s infinite;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  border: 9px solid;
+  border-radius: 50%;
+  border-color: #ff073a #ff073a #0000 #0000;
+  mix-blend-mode: darken;
+  animation: spinner-plncf9 1s infinite linear;
+}
+.spinner::after {
+  border-color: #0000 #0000 #dbdcef #dbdcef;
+  animation-direction: reverse;
+}
+@keyframes spinner-plncf9 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+  </style>
+</head>
+<body>
+<div class="screen-border"></div>
+<h1 class="glitch-text" data-text="PHANTOM CELL OPERATIVE ROSTER">PHANTOM CELL OPERATIVE ROSTER</h1>
+<hr>
+<div class="programmer-container">
+  <div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+    </div>
+    <div class="programmer-info">
+      <p>CODEACCESS: 0001</p>
+      <p>Status: Online</p>
+      <p>Last Access: 03:43 AM</p>
+      <p>Log Count: 312</p>
+      <p>Role: Grand Master</p>
+      <button class="hack-button" onclick="openLog('ghost01')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+      <div class="ghost-frame">
+        <div class="spinner"></div>
+      </div>
+      <div class="programmer-info">
+        <p>CODEACCESS: 0010</p>
+        <p>Status: Offline</p>
+        <p>Last Access: 05:12 AM</p>
+        <p>Log Count: 780</p>
+        <p>Role: Shadow Commander</p>
+       <button class="hack-button" onclick="openLog('crowbyte')">Open Command Log</button>
+      </div>
+    </div>
+  <div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+    </div>
+    <div class="programmer-info">
+      <p>CODEACCESS: 0011</p>
+      <p>Status: E#r$r0xAF1X</p>
+      <p>Last Access: ?@#$ AM</p>
+      <p>Log Count: 988</p>
+      <p>Role: E#r$r0xAF1X</p>
+      <button class="hack-button" onclick="openLog('sova_x')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+    </div>
+    <div class="programmer-info">
+      <p>CODEACCESS: 0100</p>
+      <p>Status: Online</p>
+      <p>Last Access:?@#$</p>
+      <p>Log Count: 180</p>
+      <p>Role: E#r$r0xAF1X</p>
+      <button class="hack-button" onclick="openLog('nullshade')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+         <div class="ghost-frame">
+        <div class="spinner"></div>
+      </div>
+    <div class="programmer-info">
+      <p>Username: E#r$r0xAF1X</p>
+      <p>Status: Online</p>
+      <p>Last Access: 03:39 AM</p>
+      <p>Log Count: E#r$r0xAF1X</p>
+      <p>Role: Visual Enginer </p>
+      <button class="hack-button" onclick="openLog('kryptic')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+    </div>
+    <div class="programmer-info">
+      <p>Username: 0101</p>
+      <p>Status: Online</p>
+      <p>Last Access: 04:10 AM</p>
+      <p>Log Count: 220</p>
+      <p>Role: Visual Enginer</p>
+      <button class="hack-button" onclick="openLog('rivex')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+         <div class="ghost-frame">
+        <div class="spinner"></div>
+      </div>
+    <div class="programmer-info">
+      <p>Username: 0111</p>
+      <p>Status: E#r$r0xAF1X</p>
+      <p>Last Access: 04:30 AM</p>
+      <p>Log Count: ?@#$</p>
+      <p>Role: Marketing Executor</p>
+      <button class="hack-button" onclick="openLog('nyx')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+        <div class="ghost-frame">
+        <div class="spinner"></div>
+      </div>
+    <div class="programmer-info">
+      <p>Username: 0110</p>
+      <p>Status: Online</p>
+      <p>Last Access: 04:50 AM</p>
+      <p>Log Count: 210</p>
+      <p>Role: E#r$r0xAF1X</p>
+      <button class="hack-button" onclick="openLog('vyrex')">Open Command Log</button>
+    </div>
+  </div>
+  <div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1001</p>
+    <p>Status: Offline</p>
+    <p>Last Access: 04:46 AM</p>
+    <p>Log Count: 233</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1001')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1010</p>
+    <p>Status: Online</p>
+    <p>Last Access: 04:00 AM</p>
+    <p>Log Count: 421</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1010')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+</div>
+  <div class="programmer-info">
+    <p>Username: 1011</p>
+    <p>Status: Online</p>
+    <p>Last Access: 03:26 AM</p>
+    <p>Log Count: 711</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1011')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1100</p>
+    <p>Status: Offline</p>
+    <p>Last Access: 04:10 AM</p>
+    <p>Log Count: 192</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1100')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1101</p>
+    <p>Status: Offline</p>
+    <p>Last Access: 04:05 AM</p>
+    <p>Log Count: 388</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1101')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1110</p>
+    <p>Status: Online</p>
+    <p>Last Access: 04:30 AM</p>
+    <p>Log Count: 250</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1110')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 1111</p>
+    <p>Status: Offline</p>
+    <p>Last Access: 04:00 AM</p>
+    <p>Log Count: 155</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_1111')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+    <div class="ghost-frame">
+      <img src="https://raw.githubusercontent.com/Jekartoz/Gif/main/20250627_125202.png" class="photo">
+  </div>
+  <div class="programmer-info">
+    <p>Username: 10000</p>
+    <p>Status: Online</p>
+    <p>Last Access: 04:00 AM</p>
+    <p>Log Count: 500</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_10000')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 10001</p>
+    <p>Status: Online</p>
+    <p>Last Access: 04:00 AM</p>
+    <p>Log Count: 345</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_10001')">Open Command Log</button>
+  </div>
+</div>
+
+<div class="programmer-box">
+  <div class="ghost-frame">
+    <div class="spinner"></div>
+  </div>
+  <div class="programmer-info">
+    <p>Username: 10010</p>
+    <p>Status: Online</p>
+    <p>Last Access: 03:29 AM</p>
+    <p>Log Count: 911</p>
+    <p>Role: E#r$r0xAF1X</p>
+    <button class="hack-button" onclick="openLog('log_10010')">Open Command Log</button>
+  </div>
+</div>
+      </div>
+    </div>
+</div>
+<div>
+  <h2 class="log-header">D4RKS33D//COMM.FRACTURE.LOG</h2>
+  <div class="log-box">
+    <p>[03:44] 0101: Same error here.</p>
+  <p>[03:45] 0111: Who’s messing with the system?</p>
+  <p>[03:45] 0011: Stay calm. Could be a main server bug. I’ll check it manually.</p>
+  <p>[03:45] 0010: Suspicious activity at <b>04:59 AM</b>. Shutdown should be at 05:00.</p>
+  <p>[03:45] 0100: Who? What’s the user ID?</p>
+  <p>[03:46] 0010: Corrupted ID… only reads <b>XXXX</b>.</p>
+  <p>[03:46] 1110: Same here. Connection from <b>YYYY</b>.</p>
+  <p>[03:46] 0111: This many anomalies? Somebody’s pulling the strings.</p>
+  <p>[03:47] 0001: Who accessed HEX-02 last? Check your logs!</p>
+  <p>[03:47] 0011: My log’s clean. No activity.</p>
+  <p>[03:47] 0101: Sure about that, <b>0011</b>? Central log shows your code at <b>04:59</b>.</p>
+  <p>[03:48] 0011: Impossible. I was on standby. Must be a system fault.</p>
+  <p>[03:48] 0100: Too clean for a bug. Looks like sabotage.</p>
+  <p>[03:48] 1110: Retrieved cache fragment: <b>D4RKS33D=1</b>.</p>
+  <p>[03:49] 0010: What’s that mean?</p>
+  <p>[03:49] 0111: Whoever holds that fragment, shut the system down.</p>
+  <p class="system">[C0NNEC710N FR4GM3N73D]</p>
+  <p>[03:50] 0011: Stay sharp. This is out of control. Someone’s exploiting the breach.</p>
+</div>
+  </div>
+</div>
+<div id="command-log" class="log-modal">
+  <div class="log-content" id="log-content"></div>
+  <button class="close-btn" onclick="closeLog()">Close</button>
+</div>
+<script>
+  const logs = {
+    ghost01: `[02:30 AM] LOGIN SUCCESS — USER: 0001  
+[02:31 AM] ACCESS NODE: HEX-02  
+[02:32 AM] RUN: net_diag -trace  
+[02:34 AM] LOG RESPONSE: Packet loss 0.03%  
+[02:36 AM] RUN: file_check /vault/cache  
+[02:38 AM] RESPONSE: 21 files scanned, no anomaly.  
+[02:40 AM] RUN: net_watch --sector D  
+[02:42 AM] ALERT: Latency spike detected (Sector D)  
+[02:43 AM] LOG: No unauthorized access detected on personal terminal  
+[02:45 AM] RUN: sys_scan -memfrag  
+[02:46 AM] RESPONSE: Memory fragmentation: 0.02% (normal)  
+[02:48 AM] LOG COUNT: 312 entries updated  
+[02:50 AM] STANDBY MODE  
+[03:43 AM] LAST ACCESS LOGGED — STATUS: ONLINE`,
+    crowbyte: `[02:59 AM] LOGIN SUCCESS — USER: 0010  
+[03:00 AM] INITIATE: system_ping --all_nodes  
+[03:01 AM] RESPONSE: All nodes online  
+[03:02 AM] ACCESS NODE: HEX-04  
+[03:03 AM] RUN: vault_probe --depth=3  
+[03:05 AM] RESPONSE: 12 secured files found  
+[03:06 AM] EXECUTE: firewall_status --log  
+[03:08 AM] RESULT: No breach detected  
+[03:09 AM] ATTEMPT: vault_access --level=2  
+[03:10 AM] ACCESS DENIED (insufficient clearance)  
+[03:11 AM] SEND: notify --admin "Request Clearance Update"  
+[03:12 AM] RESPONSE: No reply  
+[03:13 AM] LOG: anomaly_ping detected at Sector D (unverified)  
+[03:14 AM] TRACE: anomaly_ping source [unreachable]  
+[03:15 AM] SYSTEM NOTE: latency normal  
+[03:16 AM] LOGOUT  
+[04:11 AM] AUTO-SYNC: system_status_update  
+[04:12 AM] LAST ACCESS LOGGED — STATUS: OFFLINE`,
+    sova_x: `[03:15 AM] LOGIN SUCCESS — USER: 0011  
+[03:16 AM] ACCESS NODE: HEX-02  
+[03:17 AM] EXECUTE: trace_route --ghost-node  
+[03:20 AM] RESPONSE: No active anomalies  
+[03:23 AM] RUN: scan_fragments --sector=D  
+[03:26 AM] 3 residual packets found  
+[03:28 AM] INITIATE: purge_temp --silent  
+[03:30 AM] LOG: Temp files cleared (2 anomalies unregistered
+[03:32 AM] LOGOUT  
+[04:57 AM] LOGIN SUCCESS — USER: 0011  
+[04:58 AM] EXECUTE: system_bypass --node=HEX-02  
+[04:59 AM] LOG: Access granted (unauthorized flag ignored)  
+[05:00 AM] RUN: inject_payload --silent  
+[05:01 AM] SYSTEM: ERROR 0xAF1X (log anomaly detected)  
+[05:02 AM] ATTEMPT: erase_log --trace  
+[05:03 AM] RESPONSE: Partial success (1 cache remain)  
+[05:05 AM] ACCESS NODE: HEX-03  
+[05:07 AM] EXECUTE: redirect_packet --dest=ghost-null  
+[05:08 AM] SYSTEM: Latency spike registered at Sector D  
+[05:10 AM] LOG: No unauthorized access detected  
+[05:12 AM] LOG COUNT: 988 entries updated  
+[05:13 AM] STANDBY MODE  
+[05:22 AM] UNAUTHORIZED PING RECEIVED (trace unknown)  
+[05:23 AM] RESPONSE: AUTO-SILENCE ACTIVE  
+[05:25 AM] SYSTEM: ERROR STATUS E#r$r0xAF1X  
+[05:26 AM] LAST ACCESS LOGGED — TIME: ?@#$`,
+    nullshade: `[03:30 AM] LOGIN SUCCESS — USER: 0100
+[03:32 AM] ACCESS NODE: HEX-02  
+[03:33 AM] EXECUTE: proto_inject --silent  
+[03:35 AM] RESPONSE: Injection successful.  
+[03:37 AM] EXECUTE: darkseed_deploy --sector=E  
+[03:39 AM] STATUS: Migration process initiated.  
+[03:41 AM] CONNECTION TERMINATED  
+[03:42 AM] SYSTEM LOG: Darkseed instance rerouted.  
+[03:43 AM] LAST ACCESS LOGGED — STATUS: ONLINE`,
+    kryptic: `[02:50 AM] LOGIN SUCCESS — USER: E#r$r0xAF1X  
+[02:52 AM] ACCESS NODE: HEX-03  
+[02:54 AM] RUN: trace_packet --sector D  
+[02:56 AM] LOG: Minor anomaly detected (ping spike)  
+[02:58 AM] EXECUTE: vault_scan --level=1  
+[03:00 AM] RESULT: 12 unsecured files flagged  
+[03:02 AM] ATTEMPT: proto_sniff --sector=E  
+[03:04 AM] ACCESS DENIED — Insufficient privilege  
+[03:06 AM] EXECUTE: TRACE_B4CK  
+[03:08 AM] DOWNLOAD COMPLETE — 2.6MB  
+[03:10 AM] RUN: decode_fragments --cache  
+[03:13 AM] RESPONSE: 3 residual packets found  
+[03:16 AM] EXECUTE: ECHO 'D4RKS33D=1'  
+[03:20 AM] SYSTEM WARNING — UNAUTHORIZED PACKET DETECTED  
+[03:22 AM] RUN: verify_protocol --ph4nt0m_c0d3  
+[03:24 AM] RESULT: Incomplete key fragment  
+[03:28 AM] ACCESS NODE: HEX-01  
+[03:30 AM] EXECUTE STRING: "E/7--EXECUTE.D4RKS33D.ACTIVE//"  
+[03:32 AM] RESPONSE: Command queue delayed  
+[03:34 AM] LOG: Detected 2 ghost signals  
+[03:36 AM] ALERT: Latency spike registered (Sector D)  
+[03:39 AM] LAST ACCESS LOGGED — STATUS: ONLINE  
+[04:10 AM] LOGIN ATTEMPT — USER: KRYPTIC  
+[04:10 AM] SYSTEM: ACCESS REJECTED — RESTRICTED MODE  
+[05:00 AM] SYSTEM SHUTDOWN SEQUENCE DETECTED  
+[05:12 AM] FORCED DISCONNECT — Connection timed out`,
+    rivex: `[03:00 AM] LOGIN SUCCESS — USER: 0101  
+[03:01 AM] ACCESS NODE: HEX-05  
+[03:03 AM] EXECUTE: system_diag -v  
+[03:05 AM] RESULT: All parameters normal  
+[03:08 AM] RUN: data_monitor --sector D  
+[03:10 AM] LOG: Minor latency fluctuation detected  
+[03:12 AM] ATTEMPT: data_patch --node=HEX-02  
+[03:14 AM] ACCESS DENIED — Node locked  
+[03:16 AM] EXECUTE: TRACE_NODE --HEX-02  
+[03:19 AM] RESULT: 3 active connections  
+[03:22 AM] LOG: [CODE BRE4K] flagged — source unknown  
+[03:25 AM] RUN: capture_log --fragments  
+[03:28 AM] RESPONSE: 5 corrupted packets  
+[03:30 AM] LOG COUNT: 220 entries updated  
+[04:10 AM] LAST ACCESS LOGGED — STATUS: ONLINE`,
+    nyx: `[03:20 AM] LOGIN SUCCESS — USER: 0111  
+[03:22 AM] ACCESS NODE: HEX-01  
+[03:24 AM] EXECUTE: campaign_status -check  
+[03:26 AM] RESULT: Pending approval  
+[03:29 AM] RUN: traffic_monitor --sector D  
+[03:31 AM] LOG: Anomaly ping detected  
+[03:33 AM] EXECUTE: vault_access --level=1  
+[03:36 AM] RESULT: Restricted Access  
+[03:38 AM] LOG: [E#r$r 0xAF1X] detected in system cache  
+[03:40 AM] ATTEMPT: decode_string "D4RKS33D=1"  
+[03:42 AM] WARNING: Insufficient privilege  
+[03:45 AM] LOG: Residual packet capture failed  
+[04:00 AM] LAST ATTEMPT — ACCESS NODE HEX-02  
+[04:30 AM] SYSTEM RESPONSE: ERROR STATE`,
+    vyrex: `[03:05 AM] LOGIN SUCCESS — USER: 0110  
+[03:07 AM] EXECUTE: sys_health -mem  
+[03:09 AM] RESULT: Stable  
+[03:12 AM] RUN: net_watch --sector E  
+[03:14 AM] LOG: 1 anomaly flagged  
+[03:18 AM] ATTEMPT: bypass_check --firewall  
+[03:20 AM] SUCCESS  
+[03:23 AM] EXECUTE: vault_scan --level=2  
+[03:26 AM] RESULT: No anomalies  
+[03:29 AM] LOG COUNT: 210 entries updated  
+[03:32 AM] EXECUTE: proto_test --sector D  
+[03:36 AM] LOG: Connection unstable  
+[03:40 AM] STANDBY MODE  
+[04:50 AM] LAST ACCESS LOGGED — STATUS: ONLINE`,
+    shadowborn: `[03:10 AM] LOGIN SUCCESS — USER: XXXXX  
+[03:12 AM] ACCESS NODE: HEX-06  
+[03:14 AM] EXECUTE: code_check --frag_03  
+[03:17 AM] RESULT: 1 potential anomaly  
+[03:20 AM] RUN: decrypt_test --sector D  
+[03:24 AM] RESULT: Packet corrupted  
+[03:27 AM] EXECUTE: inject_proto --silent  
+[03:30 AM] SUCCESS  
+[03:35 AM] ATTEMPT: proto_mask --node=HEX-02  
+[03:38 AM] PARTIAL SUCCESS  
+[03:41 AM] LOG COUNT: 230 entries updated  
+[04:00 AM] EXECUTE: scan_fragments  
+[04:30 AM] LOG: Fragment mismatch — possible ghost packet  
+[04:59 AM] LAST ACCESS LOGGED — STATUS: ONLINE`,
+  "log_1001": `[03:12 AM] LOGIN SUCCESS — USER: 1001
+[03:13 AM] ACCESS NODE: HEX-03
+[03:15 AM] RUN: check_latency --sector=D
+[03:18 AM] RESPONSE: Normal latency
+[03:19 AM] SCAN: relay_logs --node=002
+[03:22 AM] No anomalies detected
+[03:25 AM] LOG COUNT: 233 entries updated
+[03:30 AM] LOGOUT
+[04:45 AM] UNAUTHORIZED PING RECEIVED
+[04:46 AM] RESPONSE: Trace failed`,
+  "log_1010": `[03:10 AM] LOGIN SUCCESS — USER: 1010
+[03:11 AM] ACCESS NODE: HEX-02
+[03:13 AM] RUN: scan_fragments --sector=D
+[03:14 AM] Found: 1 residual
+[03:16 AM] EXEC: purge_temp --force
+[03:20 AM] ERROR: Permission denied
+[03:23 AM] OVERRIDE: system_bypass
+[03:25 AM] Purge completed
+[03:26 AM] LOG COUNT: 421 entries updated
+[04:00 AM] STANDBY MODE`,
+  "log_1011": `[03:11 AM] LOGIN SUCCESS — USER: 1011
+[03:12 AM] ACCESS NODE: HEX-03
+[03:13 AM] EXEC: trace_route --ghost-node
+[03:14 AM] RESPONSE: No trace
+[03:18 AM] RUN: scan_fragments --sector=D
+[03:20 AM] 2 residuals detected
+[03:21 AM] EXEC: purge_temp --silent
+[03:23 AM] ACCESS NODE: HEX-02
+[03:24 AM] EXEC: redirect_packet --dest=dummy-relay
+[03:26 AM] LOG COUNT: 711 entries updated`,
+  "log_1100": `[03:05 AM] LOGIN SUCCESS — USER: 1100
+[03:06 AM] ACCESS NODE: HEX-01
+[03:08 AM] EXEC: scan_latency --all
+[03:10 AM] Latency normal
+[03:15 AM] RUN: relay_check --sector=D
+[03:16 AM] No anomaly
+[03:20 AM] EXEC: trace_dump
+[03:25 AM] LOG COUNT: 192 entries updated
+[03:30 AM] LOGOUT
+[04:10 AM] UNAUTHORIZED PING RECEIVED`,
+  "log_1101": `[03:30 AM] LOGIN SUCCESS — USER: 1101
+[03:31 AM] ACCESS NODE: HEX-02
+[03:35 AM] SCAN: ghost-node
+[03:36 AM] No response
+[03:40 AM] EXEC: reset_latency --sector=B
+[03:42 AM] Completed
+[03:43 AM] LOG COUNT: 388 entries updated
+[03:50 AM] LOGOUT
+[04:00 AM] SYSTEM PING FAILED
+[04:05 AM] RESPONSE: OK`,
+  "log_1110": `[03:15 AM] LOGIN SUCCESS — USER: 1110
+[03:16 AM] ACCESS NODE: HEX-03
+[03:18 AM] EXEC: scan_fragments --sector=D
+[03:19 AM] No residual
+[03:21 AM] LOG COUNT: 250 entries updated
+[03:22 AM] LOGOUT
+[04:10 AM] PING RESPONSE: OK
+[04:30 AM] STANDBY MODE`,
+  "log_1111": `[03:20 AM] LOGIN SUCCESS — USER: 1111
+[03:21 AM] ACCESS NODE: HEX-01
+[03:25 AM] SCAN: anomaly
+[03:26 AM] No result
+[03:30 AM] EXEC: relay_trace --node=004
+[03:33 AM] RESPONSE: Normal
+[03:35 AM] LOG COUNT: 155 entries updated
+[03:40 AM] LOGOUT
+[04:00 AM] AUTO-TRACE PENDING`,
+  "log_10000": `[03:00 AM] LOGIN SUCCESS — USER: 10000
+[03:01 AM] ACCESS NODE: HEX-03
+[03:03 AM] EXEC: trace_route
+[03:05 AM] RESPONSE: Clear
+[03:07 AM] RUN: scan_fragments --sector=D
+[03:10 AM] 1 residual detected
+[03:11 AM] PURGE TEMP: complete
+[03:15 AM] LOG COUNT: 500 entries updated
+[03:20 AM] LOGOUT
+[04:00 AM] STANDBY`,
+  "log_10001": `[03:05 AM] LOGIN SUCCESS — USER: 10001
+[03:06 AM] ACCESS NODE: HEX-03
+[03:10 AM] EXEC: latency_scan --sector=D
+[03:11 AM] Normal
+[03:12 AM] SCAN: trace_anomaly
+[03:14 AM] No anomaly
+[03:15 AM] LOG COUNT: 345 entries updated
+[03:20 AM] LOGOUT
+[04:00 AM] AUTO-PING ACTIVE`,
+  "log_10010": `[03:10 AM] LOGIN SUCCESS — USER: 10010
+[03:11 AM] ACCESS NODE: HEX-02
+[03:13 AM] EXEC: scan_fragments --sector=D
+[03:15 AM] 3 residuals detected
+[03:16 AM] EXEC: purge_temp --force
+[03:17 AM] PURGE SUCCESS
+[03:20 AM] EXEC: inject_dummy_trace --relay=73A
+[03:22 AM] Dummy active
+[03:24 AM] EXEC: delay_route --sector=E
+[03:26 AM] SYSTEM: Latency anomaly
+[03:27 AM] LOG COUNT: 911 entries updated
+[03:29 AM] STANDBY`
+};
+
+  function openLog(username) {
+    document.getElementById("log-content").innerText = logs[username];
+    document.getElementById("command-log").style.display = "flex";
+  }
+
+  function closeLog() {
+    document.getElementById("command-log").style.display = "none";
+  }
+</script>
+</body>
+</html>
