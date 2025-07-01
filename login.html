@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACCESS TERMINAL</title>
+  <style>
+    body {
+      background-color: black;
+      color: #ff073a;
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .terminal-box {
+      border: 2px solid #ff073a;
+      border-radius: 10px;
+      padding: 30px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 0 15px #ff073a;
+      background-color: #222;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    input {
+      background: black;
+      border: 1px solid #ff073a;
+      border-radius: 10px;
+      color: #ff073a;
+      padding: 10px;
+      font-size: 16px;
+      width: 220px;
+      text-align: center;
+    }
+    button {
+      background: black;
+      border: 1px solid #ff073a;
+      color: #ff073a;
+      padding: 8px 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #ff073a;
+      color: black;
+    }
+    .error {
+      color: red;
+      margin-top: 15px;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .glitch {
+      position: relative;
+      color: red;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="terminal-box">
+  <h1>ACCESS TERMINAL</h1>
+  <input type="password" id="password" placeholder="ENTER PASSWORD">
+  <br>
+  <button onclick="checkPassword()">ENTER</button>
+  <div id="error-msg" class="error"></div>
+  <div id="success-msg" class="success"></div>
+</div>
+
+<script>
+  const validPasswords = [
+    "1010", "1011", "1100", "1101", "1110", "1111", "10000", "10001", "10010", "10011",
+    "10100", "10101", "10110", "10111", "11000", "11001", "11010", "11011", "11100", "11101",
+    "11110", "11111", "100000", "100001", "100010", "100011", "100100", "100101", "100110",
+    "100111", "101000", "101001", "101010", "101011", "101100", "101101", "101110", "101111",
+    "110000", "110001", "110010", "110011", "110100", "110101", "110110", "110111", "111000",
+    "111001", "111010", "111011", "111100", "111101", "111110", "111111", "1000000", "1000001",
+    "1000010", "1000011", "1000100", "1000101", "1000110", "1000111", "1001000", "1001001",
+    "1001010", "1001011", "1001100", "1001101", "1001110", "1001111", "1010000", "1010001",
+    "1010010", "1010011", "1010100", "1010101", "1010110", "1010111", "1011000", "1011001",
+    "1011010", "1011011", "1011100", "1011101", "1011110", "1011111", "1100000", "1100001",
+    "1100010", "1100011", "1100100", "1100101", "1100110", "1100111", "1101000", "1101001",
+    "1101010", "1101011", "1101100", "1101101", "1101110"
+  ];
+
+  document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      checkPassword();
+    }
+  });
+
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    const errorMsg = document.getElementById("error-msg");
+    const successMsg = document.getElementById("success-msg");
+
+    if (validPasswords.includes(input)) {
+      successMsg.innerText = "ACCESS GRANTED";
+      setTimeout(() => {
+        window.location.href = "loading1.html";
+      }, 1000);
+    } else {
+      errorMsg.innerText = "ACCESS DENIED";
+      errorMsg.classList.add("glitch");
+      setTimeout(() => {
+        errorMsg.classList.remove("glitch"); 
+      }, 1000);
+    }
+  }
+</script>
+
+  
+</script>
+</body>
+</html>

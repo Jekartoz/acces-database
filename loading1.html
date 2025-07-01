@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading | ARM AREA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0b0b0b;
+      font-family: 'Share Tech Mono', monospace;
+      color: #ff073a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .loading-text {
+      font-size: 1.5rem;
+      text-align: center;
+      letter-spacing: 1px;
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+.progress {
+   width: 100.8px;
+   height: 16.8px;
+   -webkit-mask: linear-gradient(90deg,#ff073a 70%,#0000 0) left/20% 100%;
+   background: linear-gradient(#ff073a 0 0) left/0% 100% no-repeat
+       #dbdcef;
+   animation: progress-422c3u 2s infinite steps(6);
+}
+
+@keyframes progress-422c3u {
+   100% {
+      background-size: 120% 100%;
+   }
+}
+</style>
+
+  </style>
+</head>
+<body>
+  
+   <div class="progress"></div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "level1.html";
+    }, 4200);
+  </script>
+</body>
+</html>
